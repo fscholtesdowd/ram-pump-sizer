@@ -288,7 +288,7 @@ def render(d: dict) -> str:
 
   <h2>Where each idea came from</h2>
   <p>These are not decoration. Each patent below contributed a specific piece of the
-  machine that is still in every ram built today.</p>
+  machine that is still central to how rams are designed today.</p>
 
 {patent_html}
 

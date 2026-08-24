@@ -1,0 +1,114 @@
+{
+  "_README": "SINGLE SOURCE OF TRUTH for every patent fact printed on this site. Nothing about a patent may be typed into build_patents.py or into any HTML by hand -- it is read from here, and verify_patents.py fails the build if a page prints a number this file does not contain. Every row was read off the actual Google Patents page on the date in `verified_on`, not from a search snippet.",
+  "_TERM_RULE": "US utility patents filed on/after 1995-06-08 run 20 years from the earliest filing date. Patents filed before that ran 17 years from grant, or 20 from filing, whichever was longer. Every patent in this file predates 1995 and Google Patents independently prints `Expired - Lifetime` on each, so both tests agree.",
+  "_PD_RULE": "Separate from patent term: MOST US works PUBLISHED in 1930 or earlier are in the US public domain by copyright age as of 2026-01-01 (95 years), assuming any required copyright formalities were met. That is why the FIGURES in the pre-1931 patents below can be treated as free to reproduce. A patent expiring is about the right to BUILD the machine; publication date is about the right to COPY the drawing. Two different clocks -- do not conflate them.",
+  "_PD_RULE_SOURCE": "Verified 2026-08-23: on 2026-01-01 (Public Domain Day) works first published in 1930 entered the US public domain after the standard 95-year term, so most US works published in 1930 or earlier are public domain as of 2026, assuming any required formalities were met. Confirmed against Public Domain Day 2026 coverage (Duke/Columbia/Library of Congress reporting).",
+  "_PD_RULE_QUALIFIER": "WORDED AS 'MOST ... ASSUMING FORMALITIES' ON PURPOSE. Cross-check (2026-08-23, openrouter + local seats) correctly flagged an earlier draft that stated this as an absolute rule; the source says 'most' and carries the formalities condition. The qualifier stays. Note also that the three patents relied on here are 1845/1883/1904 documents published by the US government, which is a second and independent reason to treat them as free to reproduce -- but this file does not claim a blanket rule for all patent figures everywhere.",
+  "_FREE_TO_PRACTICE_LIMIT": "SAY 'THESE PATENTS DO NOT BLOCK YOU', NEVER 'FREE TO PRACTICE' FLAT. Cross-check flagged this and it is a real legal distinction: an expired patent's own claims stop constraining anyone, but that is not a clearance opinion on any particular device a reader might build -- a modern pump could still read on some OTHER patent that is still live. Every page must scope the statement to the patents actually cited.",
+  "verified_on": "2026-08-23",
+  "verified_by": "Scout, by direct WebFetch of each patents.google.com page",
+
+  "patents": [
+    {
+      "id": "US4328A",
+      "url": "https://patents.google.com/patent/US4328A/en",
+      "title": "Hydraulic ram",
+      "inventor": "Benjamin S. Benson, Harford County, Maryland",
+      "date_label": "Dated December 26, 1845 (antedated August 5, 1845)",
+      "date_year": 1845,
+      "filing_date": null,
+      "filing_note": "No separate application date is printed; the 1845 document gives only the patent date.",
+      "grant_date": "1845-12-26",
+      "status": "Expired - Lifetime",
+      "anticipated_expiration": "1862-12-26",
+      "public_domain_figures": true,
+      "contributes": "Two-source arrangement: stream water is the motive power while spring water is the fluid actually lifted. Also a lever-and-bucket arrangement that regulates flow automatically by responding to water level, so the pump keeps running unattended.",
+      "quote": "the raising of spring water from a lower to a higher level by the motive power of river, or branch water"
+    },
+    {
+      "id": "US281749A",
+      "url": "https://patents.google.com/patent/US281749A/en",
+      "title": "Hydraulic ram",
+      "inventor": "George Yellott, Towson, Maryland",
+      "date_label": "Published July 24, 1883",
+      "date_year": 1883,
+      "filing_date": null,
+      "filing_note": "DO NOT PRINT A FILING DATE FOR THIS ONE. The Google Patents transcription reads 'Application filed September 11, 1832' -- fifty-one years before its own grant date. That is an OCR/transcription error in the scanned document, not a real date. The publication date 1883-07-24 and the expiration 1900-07-24 are both consistent (grant + 17 years) and are the only dates cited here.",
+      "forbidden_years": ["1832"],
+      "forbidden_years_why": "Machine-readable list for verify_patents.py check C4. This field exists because the first version of C4 scraped years out of `filing_note` prose and swept up 1900 -- a legitimate expiration date -- flagging the correct page as broken. The positive control caught it. Naming the bad year explicitly is the fix; never infer a forbidden value by parsing a human sentence.",
+      "grant_date": "1883-07-24",
+      "status": "Expired - Lifetime",
+      "anticipated_expiration": "1900-07-24",
+      "public_domain_figures": true,
+      "contributes": "States the momentum principle plainly -- the moving column in the drive pipe behaves as a solid mass, which is why stopping it abruptly produces the pressure spike that does the lifting. Adds a piston-valve that moves automatically inside a cylindrical outlet pipe, and a supplemental air chamber whose compressed air cushions the shock and re-establishes outflow for the next stroke.",
+      "quote": "water moving through the drive-pipe...acts like a solid body"
+    },
+    {
+      "id": "US755467A",
+      "url": "https://patents.google.com/patent/US755467A/en",
+      "title": "Hydraulic ram",
+      "inventor": "George H. Earle Jr. (Bryn Mawr, PA) and George B. Shainline (Wayne, PA)",
+      "date_label": "Filed December 10, 1903; granted March 22, 1904",
+      "date_year": 1904,
+      "filing_date": "1903-12-10",
+      "filing_note": null,
+      "grant_date": "1904-03-22",
+      "status": "Expired - Lifetime",
+      "anticipated_expiration": "1921-03-22",
+      "public_domain_figures": true,
+      "contributes": "Incoming water strikes an adjustable bucket carried on a pivoted lever, and that closes the valve at the outlet; the bucket is adjustable specifically to compensate for variations in pressure. The closure traps the water's momentum and delivers force to a piston in a working cylinder. Modern experimental work still finds waste-valve geometry to be a dominant efficiency variable.",
+      "contributes_note": "Reworded 2026-08-23 after cross-check. An earlier draft said the bucket let 'the valve's closing point be tuned', which reads a specific timing mechanism into a source that says only that the bucket closes the valve and that it compensates for pressure variations. Track the source; do not upgrade its language.",
+      "quote": null
+    }
+  ],
+
+  "adjacent_patents_not_used_on_this_site": [
+    {
+      "id": "US4320738A",
+      "title": "Heating stove",
+      "inventor": "Virgil Johnson",
+      "filing_date": "1980-05-30",
+      "grant_date": "1982-03-23",
+      "status": "Expired - Lifetime",
+      "anticipated_expiration": "2000-05-30",
+      "public_domain_figures": false,
+      "note": "Primary air below the grate, secondary air above it, fixed baffle splitting primary/secondary combustion chambers, movable baffle routing exhaust through a corrugated flue. Belongs to the Firewood Calculator site, not this one. Figures are NOT public domain (published 1982)."
+    },
+    {
+      "id": "US3938284A",
+      "title": "Root cellar",
+      "inventor": "Lynn C. Broadbent and William B. Thomas",
+      "filing_date": "1974-10-29",
+      "grant_date": "1976-02-17",
+      "status": "Expired - Lifetime",
+      "anticipated_expiration": "1993-02-17",
+      "public_domain_figures": false,
+      "note": "Two rotatable vent stacks with 45-degree downturned elbows at opposite rear corners -- one aimed into the prevailing wind as intake, the other as exhaust, giving wind-driven cross-ventilation with no power. Figures are NOT public domain (published 1976)."
+    }
+  ],
+
+  "physics": {
+    "efficiency_metric": "D'Aubuisson",
+    "efficiency_formula": "eta = (q * h) / (Q * H)",
+    "delivered_flow_formula": "q = eta * Q * H / h",
+    "symbols": {
+      "q": "delivered flow",
+      "Q": "supply flow into the drive pipe",
+      "H": "drive head (the fall from source down to the pump)",
+      "h": "delivery head (the lift from the pump up to the tank)"
+    },
+    "note": "D'Aubuisson measures both heads from the ram itself. The other convention in the literature, Rankine, credits only the NET lift above the supply surface -- it treats the water as raised through (lift minus fall) rather than the full lift -- and so always returns a lower number for the same pump. Always say which one you mean. The calculator on this site uses D'Aubuisson, matching the formula already implemented in app.js.",
+    "symbol_warning": "TEXTBOOKS SWAP THESE TWO LETTERS AND IT IS A REAL TRAP. This site uses H = drive head (the fall down to the pump) and h = delivery head (the lift up to the tank), giving eta = q*h/(Q*H). Many references invert them -- H = the lift, h = the supply head -- and write the identical physical law as eta = q*H/(Q*h). Both say the same thing: efficiency = (delivered flow x lift) / (supply flow x fall). Read the symbol definitions before trusting any ram formula, including this one.",
+    "symbol_warning_source": "Standard hydraulics references state D'Aubuisson's efficiency as N = (q*H)/(Q*h) with H defined as the delivery height above the chamber and h as the supply head -- the mirror image of the lettering used here.",
+    "measured_efficiency_reference": "Published experimental work on 3-inch rams reports a peak D'Aubuisson efficiency of 67.66% at a waste-valve diameter of 2.75 in and delivery-valve diameter of 2.2 in.",
+    "measured_efficiency_source": "Experimental Study of Waste Valves and Delivery Valves Diameter Effect on the Efficiency of 3-Inch Hydraulic Ram Pumps, International Journal of Fluid Machinery and Systems 13(3)",
+    "rankine_note": "Rankine's efficiency is always less than D'Aubuisson's for the same pump, because it credits only the net lift above the supply level.",
+    "losses_note": "The D'Aubuisson formula assumes ideal valve timing and zero friction. Reported real-world losses: drive-pipe friction 5-8 percentage points, waste-valve closure timing 3-7 points, air-chamber damping 2-5 points."
+  },
+
+  "deliberately_not_printed": [
+    "Drive-pipe length-to-diameter rules of thumb. Several circulate (L/D of 150-1000; drive pipe 3-10x the fall). None was sourced to a primary document in this run, so none is printed. An unsourced number on a page that sells itself on being sourced is the whole failure this site exists to avoid.",
+    "Any specific pipe sizes, fitting counts, or dollar costs for a build. The parts list names components only. Numbers get added when a citable source is in hand, not before.",
+    "Any affiliate link. links.json in the Firewood Calculator project holds amazon_associates at hold_until_traffic, and that is the correct order here too: traffic first, then a program, then links -- and the program signup is Forrest's hands, not an agent's."
+  ]
+}

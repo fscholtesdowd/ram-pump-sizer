@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RAM Pump Sizer</title>
+<meta name="description" content="Size a hydraulic ram pump: estimate delivered flow rate from supply flow, drive head and delivery head.">
+<meta name="theme-color" content="#1b4332">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="app-header">
+  <h1>RAM Pump Sizer</h1>
+  <p class="subtitle">Estimate delivered flow for a hydraulic ram pump</p>
+</header>
+
+<main>
+  <section class="card">
+    <h2>Inputs</h2>
+
+    <div class="field">
+      <label for="supplyFlow">Supply flow rate (Q)</label>
+      <div class="input-row">
+        <input type="number" id="supplyFlow" inputmode="decimal" min="0" step="any" placeholder="e.g. 40">
+        <select id="supplyFlowUnit">
+          <option value="Lpm">L/min</option>
+          <option value="Lps">L/s</option>
+          <option value="m3h">m&sup3;/hr</option>
+          <option value="gpm">US gal/min</option>
+        </select>
+      </div>
+      <p class="hint">Flow available from your spring, stream or tank feeding the ram.</p>
+    </div>
+
+    <div class="field">
+      <label for="driveHead">Drive head / fall (H)</label>
+      <div class="input-row">
+        <input type="number" id="driveHead" inputmode="decimal" min="0" step="any" placeholder="e.g. 3">
+        <select id="driveHeadUnit" class="unit-length">
+          <option value="m">m</option>
+          <option value="ft">ft</option>
+        </select>
+      </div>
+      <p class="hint">Vertical drop from the water source to the ram pump.</p>
+    </div>
+
+    <div class="field">
+      <label for="deliveryHead">Delivery head / lift (h)</label>
+      <div class="input-row">
+        <input type="number" id="deliveryHead" inputmode="decimal" min="0" step="any" placeholder="e.g. 25">
+        <select id="deliveryHeadUnit" class="unit-length">
+          <option value="m">m</option>
+          <option value="ft">ft</option>
+        </select>
+      </div>
+      <p class="hint">Vertical height from the ram pump up to the delivery point.</p>
+    </div>
+
+    <div class="field">
+      <label for="efficiency">Efficiency estimate <span id="effSuggestLabel" class="badge"></span></label>
+      <div class="input-row">
+        <input type="range" id="efficiency" min="20" max="85" step="1" value="60">
+        <output id="efficiencyValue">60%</output>
+      </div>
+      <p class="hint">Auto-suggested from the h/H ratio using published ram pump efficiency data. Drag to override.</p>
+    </div>
+  </section>
+
+  <section class="card result" id="resultCard">
+    <h2>Result</h2>
+    <div class="result-grid">
+      <div class="result-item primary">
+        <span class="result-label">Delivered flow (q)</span>
+        <span class="result-value" id="deliveredFlow">&mdash;</span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">Delivered per day</span>
+        <span class="result-value" id="deliveredPerDay">&mdash;</span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">Waste flow (to tailrace)</span>
+        <span class="result-value" id="wasteFlow">&mdash;</span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">h/H ratio</span>
+        <span class="result-value" id="ratioValue">&mdash;</span>
+      </div>
+    </div>
+    <p id="ratioWarning" class="warning" hidden></p>
+  </section>
+
+  <section class="card about">
+    <h2>How this works</h2>
+    <p>Delivered flow is estimated with the standard hydraulic ram pump relation:</p>
+    <p class="formula">q = e &times; Q &times; H &divide; h</p>
+    <p>where <strong>Q</strong> is supply flow, <strong>H</strong> is drive head, <strong>h</strong> is delivery head, and <strong>e</strong> is pump efficiency (D&rsquo;Aubuisson definition, e = qh &divide; QH). Efficiency is auto-suggested from published h/H performance data for well-tuned single-stage rams (roughly 75% at low ratios, tapering off as the ratio climbs past ~30); actual efficiency varies by pump model and installation quality, so treat results as an estimate for first-pass sizing, not a guarantee.</p>
+    <p><a href="how-it-works/">How a hydraulic ram pump works &mdash; the four-stage cycle, explained from the original (expired) patents &rarr;</a></p>
+    <p class="hint">Careful when comparing this formula to a textbook: many references swap the letters, writing <strong>H</strong> for the lift and <strong>h</strong> for the fall. Here <strong>H</strong> is the fall and <strong>h</strong> is the lift. Same physics, mirrored lettering.</p>
+  </section>
+</main>
+
+<footer>
+  <button id="installBtn" class="install-btn" hidden>Install app</button>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build the patent-sourced content pages for the Ram Pump Sizer site.
 
-Scout, 2026-08-23, on Forrest's patent-mining order.
+Built 2026-08-23, patent-mining pass.
 
 WHY THIS EXISTS
 ---------------
@@ -186,7 +186,7 @@ def render(d: dict) -> str:
         rows.append(
             f"""      <article class="patent">
         <header>
-          <h3><a href="{esc(p['url'])}" rel="noopener">{esc(p['id'])}</a> &mdash; {esc(p['title'])}</h3>
+          <h3><a href="{esc(p['url'])}" rel="noopener">{esc(p['id'])}</a>: {esc(p['title'])}</h3>
           <p class="meta">{esc(p['inventor'])} &middot; {esc(p['date_label'])}</p>
         </header>
         <p>{esc(p['contributes'])}</p>
@@ -204,7 +204,7 @@ def render(d: dict) -> str:
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>How a Hydraulic Ram Pump Works &mdash; The Four-Stage Cycle, From the Original Patents</title>
+<title>How a Hydraulic Ram Pump Works: The Four-Stage Cycle, From the Original Patents</title>
 <meta name="description" content="A hydraulic ram pump lifts water uphill with no electricity, using the shock of stopping moving water. Here is the four-stage cycle, drawn and explained from three expired US patents ({esc(ids)}).">
 <link rel="canonical" href="how-it-works/">
 <meta name="theme-color" content="#1b4332">
@@ -268,7 +268,7 @@ def render(d: dict) -> str:
 
   <p>The mechanism is over two centuries old and every patent describing it has long since
   expired, so the design belongs to everybody. What follows is drawn from three of
-  them &mdash; {esc(ids)} &mdash; the newest of which ran out of term in
+  them ({esc(ids)}), the newest of which ran out of term in
   {esc(newest_expiry[:4])}.</p>
 
   {diagram_svg()}
@@ -282,7 +282,7 @@ def render(d: dict) -> str:
     <h2>The counter-intuitive part</h2>
     <p>Most people assume the pump is powered by the <em>weight</em> of the falling water.
     It is not. It is powered by the <em>shock of stopping</em> it. That is why a ram needs
-    a long drive pipe rather than a tall one &mdash; the pipe's job is to give a heavy
+    a long drive pipe rather than a tall one: the pipe's job is to give a heavy
     column of water somewhere to build up speed before the waste valve stops it dead.</p>
   </div>
 
@@ -295,7 +295,7 @@ def render(d: dict) -> str:
   <h2>What &ldquo;expired&rdquo; actually means here</h2>
   <p>A US patent is a time-limited deal: the inventor publishes exactly how the thing works,
   and in exchange gets a limited monopoly on building it. When the term runs out the
-  monopoly ends but the published instructions stay published &mdash; permanently, in
+  monopoly ends but the published instructions stay published, permanently, in
   full, free to read.</p>
   <p>{esc(d['_TERM_RULE'])}</p>
   <p>{esc(d['_PD_RULE'])}</p>
@@ -310,15 +310,15 @@ def render(d: dict) -> str:
 
   <h2>The parts, by name</h2>
   <ul class="parts">
-    <li><strong>Drive pipe</strong> &mdash; the long feed from the source. Where the water
+    <li><strong>Drive pipe</strong>: the long feed from the source. Where the water
       builds momentum. Rigid, never a soft hose.</li>
-    <li><strong>Waste valve</strong> &mdash; the one that slams shut. Does the work of
+    <li><strong>Waste valve</strong>: the one that slams shut. Does the work of
       stopping the column, and spills the water the pump does not lift.</li>
-    <li><strong>Delivery check valve</strong> &mdash; one-way gate into the air chamber.
+    <li><strong>Delivery check valve</strong>: one-way gate into the air chamber.
       Opens on the pressure spike, shuts so nothing runs back.</li>
-    <li><strong>Air chamber</strong> &mdash; a sealed pocket of trapped air. Absorbs each
+    <li><strong>Air chamber</strong>: a sealed pocket of trapped air. Absorbs each
       shock and pushes back between beats, converting hammer blows into steady flow.</li>
-    <li><strong>Delivery pipe</strong> &mdash; the climb to the tank.</li>
+    <li><strong>Delivery pipe</strong>: the climb to the tank.</li>
   </ul>
   <p class="nosrc">Deliberately not listed: pipe diameters, drive-pipe length ratios and
   parts costs. Several rules of thumb circulate for these and none was traced to a primary
@@ -353,6 +353,7 @@ h = {esc(phys['symbols']['h'])}</div>
   <p class="nosrc">Patent facts on this page are read from
   <code>data/patents.json</code>, verified against each patent's own Google Patents record
   on {esc(d['verified_on'])}. No affiliate links appear anywhere on this site.</p>
+  <p class="fine"><a href="https://fscholtesdowd.github.io/privacy/">Privacy policy</a> &middot; <a href="https://fscholtesdowd.github.io/terms/">Terms</a></p>
 </footer>
 </body>
 </html>

@@ -74,19 +74,19 @@
     <div class="result-grid">
       <div class="result-item primary">
         <span class="result-label">Delivered flow (q)</span>
-        <span class="result-value" id="deliveredFlow">&mdash;</span>
+        <span class="result-value" id="deliveredFlow">N/A</span>
       </div>
       <div class="result-item">
         <span class="result-label">Delivered per day</span>
-        <span class="result-value" id="deliveredPerDay">&mdash;</span>
+        <span class="result-value" id="deliveredPerDay">N/A</span>
       </div>
       <div class="result-item">
         <span class="result-label">Waste flow (to tailrace)</span>
-        <span class="result-value" id="wasteFlow">&mdash;</span>
+        <span class="result-value" id="wasteFlow">N/A</span>
       </div>
       <div class="result-item">
         <span class="result-label">h/H ratio</span>
-        <span class="result-value" id="ratioValue">&mdash;</span>
+        <span class="result-value" id="ratioValue">N/A</span>
       </div>
     </div>
     <p id="ratioWarning" class="warning" hidden></p>
@@ -97,13 +97,14 @@
     <p>Delivered flow is estimated with the standard hydraulic ram pump relation:</p>
     <p class="formula">q = e &times; Q &times; H &divide; h</p>
     <p>where <strong>Q</strong> is supply flow, <strong>H</strong> is drive head, <strong>h</strong> is delivery head, and <strong>e</strong> is pump efficiency (D&rsquo;Aubuisson definition, e = qh &divide; QH). Efficiency is auto-suggested from published h/H performance data for well-tuned single-stage rams (roughly 75% at low ratios, tapering off as the ratio climbs past ~30); actual efficiency varies by pump model and installation quality, so treat results as an estimate for first-pass sizing, not a guarantee.</p>
-    <p><a href="how-it-works/">How a hydraulic ram pump works &mdash; the four-stage cycle, explained from the original (expired) patents &rarr;</a></p>
+    <p><a href="how-it-works/">How a hydraulic ram pump works: the four-stage cycle, explained from the original (expired) patents &rarr;</a></p>
     <p class="hint">Careful when comparing this formula to a textbook: many references swap the letters, writing <strong>H</strong> for the lift and <strong>h</strong> for the fall. Here <strong>H</strong> is the fall and <strong>h</strong> is the lift. Same physics, mirrored lettering.</p>
   </section>
 </main>
 
 <footer>
   <button id="installBtn" class="install-btn" hidden>Install app</button>
+  <p class="fine"><a href="https://fscholtesdowd.github.io/privacy/">Privacy policy</a> &middot; <a href="https://fscholtesdowd.github.io/terms/">Terms</a></p>
 </footer>
 
 <script src="app.js"></script>

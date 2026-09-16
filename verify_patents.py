@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Verify the patent-sourced pages on the Ram Pump Sizer site.
 
-Scout, 2026-08-23.
+Built 2026-08-23.
 
 FALSIFIABILITY LAW (CLAUDE.md): "before trusting a check, make it fail on purpose."
 `--selftest` runs a POSITIVE control first -- the real, unmodified site must PASS,
@@ -13,7 +13,7 @@ a wrong date is the failure mode of patent mining. Google Patents' own transcrip
 of US281749A prints "Application filed September 11, 1832" for a patent granted in
 1883 -- an OCR error in the scanned source. S4 below plants exactly that date on the
 page and requires it to be caught, because it is the error most likely to be copied
-in good faith by the next agent that touches this.
+in good faith by whoever next edits this page.
 
 USAGE
     python verify_patents.py             # check the built site
@@ -112,7 +112,7 @@ def check(data_text: str, page_text: str, appjs_text: str) -> Result:
             r.fail(f"C5 page prints the year {y}, which appears nowhere in data/patents.json")
     r.note("C5 every year on the page traces back to the data file")
 
-    # C6 -- no affiliate link. links are gated on traffic and on Forrest's own signup.
+    # C6 -- no affiliate link. links are gated on traffic and require a human-owned account signup.
     hit = AFFIL.search(page_text)
     if hit:
         r.fail(f"C6 affiliate-shaped link on the page: {hit.group(0)!r}")
@@ -182,7 +182,7 @@ def selftest() -> int:
                                 "<p>First commercialised in 1938.</p><h2>The parts, by name</h2>", 1),
          app_t, "C5"),
         ("S6 inject an affiliate link",
-         data_t, page_t.replace('href="../"', 'href="https://amzn.to/xyz123?tag=forrest-20"', 1),
+         data_t, page_t.replace('href="../"', 'href="https://amzn.to/xyz123?tag=storeid-20"', 1),
          app_t, "C6"),
         ("S7 invert the formula in the calculator so page and code disagree",
          data_t, page_t, app_t.replace("eNow * Q_lpm * H_m / h_m", "eNow * Q_lpm * h_m / H_m", 1), "C7"),

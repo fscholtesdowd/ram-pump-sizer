@@ -6,7 +6,7 @@
   "_PD_RULE_QUALIFIER": "WORDED AS 'MOST ... ASSUMING FORMALITIES' ON PURPOSE. Cross-check (2026-08-23, openrouter + local seats) correctly flagged an earlier draft that stated this as an absolute rule; the source says 'most' and carries the formalities condition. The qualifier stays. Note also that the three patents relied on here are 1845/1883/1904 documents published by the US government, which is a second and independent reason to treat them as free to reproduce -- but this file does not claim a blanket rule for all patent figures everywhere.",
   "_FREE_TO_PRACTICE_LIMIT": "SAY 'THESE PATENTS DO NOT BLOCK YOU', NEVER 'FREE TO PRACTICE' FLAT. Cross-check flagged this and it is a real legal distinction: an expired patent's own claims stop constraining anyone, but that is not a clearance opinion on any particular device a reader might build -- a modern pump could still read on some OTHER patent that is still live. Every page must scope the statement to the patents actually cited.",
   "verified_on": "2026-08-23",
-  "verified_by": "Scout, by direct WebFetch of each patents.google.com page",
+  "verified_by": "Direct fetch of each patents.google.com page, verified 2026-08-23",
 
   "patents": [
     {
@@ -109,6 +109,6 @@
   "deliberately_not_printed": [
     "Drive-pipe length-to-diameter rules of thumb. Several circulate (L/D of 150-1000; drive pipe 3-10x the fall). None was sourced to a primary document in this run, so none is printed. An unsourced number on a page that sells itself on being sourced is the whole failure this site exists to avoid.",
     "Any specific pipe sizes, fitting counts, or dollar costs for a build. The parts list names components only. Numbers get added when a citable source is in hand, not before.",
-    "Any affiliate link. links.json in the Firewood Calculator project holds amazon_associates at hold_until_traffic, and that is the correct order here too: traffic first, then a program, then links -- and the program signup is Forrest's hands, not an agent's."
+    "Any affiliate link. links.json in the Firewood Calculator project holds amazon_associates at hold_until_traffic, and that is the correct order here too: traffic first, then a program, then links. Program signup requires a human-owned account."
   ]
 }

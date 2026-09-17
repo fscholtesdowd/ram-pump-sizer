@@ -15,8 +15,8 @@ old extension PDFs, plus Clemson/Auburn/NC State publications. That is gate v2's
 "scanned PDFs = real gap, BUILD ONLY IF WE CAN SOURCE REAL DATA" case. The real
 data here is three expired hydraulic-ram patents, read directly off Google Patents.
 
-THE FACTORY RULE (CLAUDE.md: fix the factory, not the artifact)
----------------------------------------------------------------
+FIX THE FACTORY, NOT THE ARTIFACT
+----------------------------------
 No patent number, date, status or inventor is typed in this file. Every one is read
 from data/patents.json. If a fact is wrong, it is wrong in ONE place and every page
 is regenerated. verify_patents.py enforces this by failing if a page prints a

@@ -3,7 +3,8 @@
 
 Built 2026-08-23.
 
-FALSIFIABILITY LAW (CLAUDE.md): "before trusting a check, make it fail on purpose."
+Every check must be able to return the answer it exists to detect: before trusting a
+check, make it fail on purpose.
 `--selftest` runs a POSITIVE control first -- the real, unmodified site must PASS,
 otherwise the sabotages below prove nothing -- and then breaks the site eight
 different ways and demands that each break is caught.

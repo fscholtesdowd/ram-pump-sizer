@@ -1,4 +1,4 @@
-const CACHE_NAME = "ram-pump-sizer-v1";
+const CACHE_NAME = "ram-pump-sizer-v2";
 const ASSETS = [
   "./",
   "./index.html",
